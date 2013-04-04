@@ -1,0 +1,43 @@
+doctor's list
+<hr>
+
+
+
+<%=form_tag do %>
+
+role: 
+    <% roles = @r.map{|a| [a.role_name, a.id] } %>
+    <%= select_tag :role_id, options_for_select(roles)%><br><br><br>
+
+
+<%=submit_tag :submit%>
+
+<%end%>
+
+<%= @ab%>
+<%if @ab %>
+
+
+<table border="2" cellspacing="2">
+	<tr><th>doctor id</th>
+	<th>doctor name</th>
+<th>department</th>
+
+<th>assign</th>
+</tr>
+<% @doc.each do |p| %>
+
+<tr>
+<td><%=p.id%></td>
+
+<td><%=p.name%></td>
+<td><%=p.department%></td>
+
+
+<td><%= link_to " click here to assign patient" ,:department=>p.department,:name=>p.name,:id=>p.id,:action=>"edit"%></td></tr>
+<%end%>
+
+<%end%>
+
+
+

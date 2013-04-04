@@ -1,0 +1,31 @@
+<%= form_tag do%>
+
+ 
+select patient:<%= select_tag "patient_id", options_for_select(@pat.collect{|u| [u.name,u.id] }),:prompt=>'select'%>
+<br>
+
+doctor name:
+    
+<br>
+
+<%= text_field_tag :dat,@n %>
+
+<%= hidden_field_tag :hid,@id %>
+<br>
+
+appointment date:<%= text_field_tag 'app'%>
+<br><%=submit_tag :submit%>
+<%end%>
+<%=link_to "back to doctors table" ,:action=>"show"%>
+
+
+<head>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<script>
+$(function() {
+$( "#app" ).datepicker();
+})
+</script>
+</head>

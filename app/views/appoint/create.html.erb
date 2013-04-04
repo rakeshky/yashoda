@@ -1,0 +1,21 @@
+user's sign up page
+<hr>
+<%= form_tag do%>
+
+username:<%= text_field_tag :username%><br><br><br>
+role: 
+    <% roles = @roles.map{|a| [a.role_name, a.id] } %>
+    <%= select_tag :role_id, options_for_select(roles)%><br><br><br>
+phone:<%= text_field_tag :phone%><br><br><br>
+department: <%= select_tag "dep", options_for_select(["select dep","Cardiology","Neurology"]) %><br><br><br>
+
+email:<%= text_field_tag :email%><br><br><br>
+<%=submit_tag :submit%>
+<%end%>
+
+
+
+<%=button_to "Go back", :back%>
+
+
+ <%= link_to "if a admin? click here to login", :action=>"disp"%><br>
