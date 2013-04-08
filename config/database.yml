@@ -17,4 +17,12 @@ development:
   username: root
   password: research
   
-
+production:
+  adapter: mysql2
+  encoding: utf8
+  
+  database: appointment
+  pool: 5
+  username: root
+  password: research
+  
