@@ -23,7 +23,7 @@ end
 gem 'jquery-rails'
 gem 'heroku'
 group :production do
-	  gem 'therubyracer-heroku'
+	
   gem 'pg' ,'0.11'
   
 
